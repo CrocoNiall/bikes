@@ -1,5 +1,6 @@
 require_relative '../lib/docking_station'
 require_relative '../lib/bike'
+require_relative '../lib/van'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
