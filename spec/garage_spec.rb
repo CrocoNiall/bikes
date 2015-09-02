@@ -25,6 +25,14 @@ describe Garage do
     expect(garage.bike_count).to eq 0
   end
 
+  it 'should fix a bike' do
+  bike.break
+  garage.admit(bike)
+  garage.fix(bike)
+
+  expect(bike.broken?).to be false
+
+  end
 
 
 

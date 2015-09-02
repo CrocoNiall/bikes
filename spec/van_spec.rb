@@ -9,6 +9,7 @@ describe Van do
   let(:van) { Van.new({capacity: 20}) }
   let(:station) { DockingStation.new({capacity: 20}) }
   let(:bike) { Bike.new }
+  let(:garage) { Garage.new({capacity: 20}) }
 
   it 'should be empty when made' do
     expect(van.bike_count).to eq 0
@@ -55,6 +56,13 @@ describe Van do
     van.bike_station_to_van(bike, station)
 
     expect(van.bike_count).to eq 1
+  end
+
+  it 'van @bike aray should decrease as bike is moved to garage' do
+    van.load(bike)
+    van.bike_van_to_garage(bike, garage)
+
+    expect(van.bike_count).to eq 0
   end
   
 end

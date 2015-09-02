@@ -19,6 +19,10 @@ class Garage
     @bikes.delete bike
   end
 
+  def fix bike
+    bike.broken = false
+  end
+
 
 
 

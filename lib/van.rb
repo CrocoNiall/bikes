@@ -27,11 +27,17 @@ class Van
   def available_bikes
     @bikes.reject { |bike| bike.working? }
   end
-  
+
 #removed bike from station bike array and inserts into van bikes array   
   def bike_station_to_van (bike, station)
     station.release(bike)
     self.load(bike)
+  end
+
+#admit a bike to garage from van  
+  def bike_van_to_garage (bike, garage)
+    self.unload(bike)
+    garage.admit(bike)
   end
 
 end
